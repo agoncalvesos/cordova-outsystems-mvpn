@@ -154,16 +154,6 @@ function readBuildJson(defaultProperties) {
 	return defaultProperties;
 }
 
-
-function readDirTmp(direc){
-	var filenames = fs.readdirSync(direc);
-
-	log("\nCurrent directory filenames:" + direc);
-	filenames.forEach(file => {
-	  log(file)
-	});
-}
-
 /**
  * Returns the default values of an mdx.json file that only contains android options
  */
@@ -175,19 +165,6 @@ function getMdxWrappingDefaultProperties() {
 	}
 	let app_id = pkg['name'];
 	// just a quite note: I don't declare run, since it's implied to be true. But you can change that if you want :)
-	
-	log("validating if apk file exists");
-	log("exists release?" + fs.existsSync("platforms/android/app/build/outputs/apk/release/app-release.apk"));
-	log("exists debug?" + fs.existsSync("platforms/android/app/build/outputs/apk/debug/app-debug.apk"));
-	
-	readDirTmp("platforms");
-	readDirTmp("platforms/android");
-	readDirTmp("platforms/android/app");
-	readDirTmp("platforms/android/app/build");
-	readDirTmp("platforms/android/app/build/outputs");
-	readDirTmp("platforms/android/app/build/outputs/apk");
-	readDirTmp("platforms/android/app/build/outputs/apk/debug");
-
 	
 	return {
 		'android': {
