@@ -170,6 +170,35 @@ function getMdxWrappingDefaultProperties() {
 	log("exists release?" + fs.existsSync("platforms/android/app/build/outputs/apk/release/app-release.apk"));
 	log("exists debug?" + fs.existsSync("platforms/android/app/build/outputs/apk/debug/app-debug.apk"));
 	
+	log("apk folder")
+	fs.readdir("platforms/android/app/build/outputs/apk", (err, files) => {
+	  files.forEach(file => {
+	    log(file);
+	  });
+	});
+	
+	
+	log("debug folder")
+	fs.readdir("platforms/android/app/build/outputs/apk/debug", (err, files) => {
+	  files.forEach(file => {
+	    log(file);
+	  });
+	});
+	
+	log("outputs folder")
+	fs.readdir("platforms/android/app/build/outputs", (err, files) => {
+	  files.forEach(file => {
+	    log(file);
+	  });
+	});
+	
+	log("build folder")
+	fs.readdir("platforms/android/app/build", (err, files) => {
+	  files.forEach(file => {
+	    log(file);
+	  });
+	});
+	
 	return {
 		'android': {
 			'debug': {
