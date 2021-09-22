@@ -180,10 +180,14 @@ function getMdxWrappingDefaultProperties() {
 	log("exists release?" + fs.existsSync("platforms/android/app/build/outputs/apk/release/app-release.apk"));
 	log("exists debug?" + fs.existsSync("platforms/android/app/build/outputs/apk/debug/app-debug.apk"));
 	
+	readDirTmp("platforms");
+	readDirTmp("platforms/android");
+	readDirTmp("platforms/android/app");
+	readDirTmp("platforms/android/app/build");
+	readDirTmp("platforms/android/app/build/outputs");
 	readDirTmp("platforms/android/app/build/outputs/apk");
 	readDirTmp("platforms/android/app/build/outputs/apk/debug");
-	readDirTmp("platforms/android/app/build/outputs");
-	readDirTmp("platforms/android/app/build");
+
 	
 	return {
 		'android': {
