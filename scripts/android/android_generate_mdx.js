@@ -74,7 +74,7 @@ module.exports = function(context) {
 		'-in',  platformRelativePath(getMdxWrappingProperty(options.argv.inputApk, mdxJsonParams, 'apk')),
 		'-out', platformRelativePath(getMdxWrappingProperty(options.argv.outputMdx, mdxJsonParams, 'mdx')),
 		'-appType', getMdxWrappingProperty(options.argv.appType, mdxJsonParams, 'appType'),
-		'-storeUrl', getMdxWrappingProperty(options.argv.storeUrl, mdxJsonParams, 'storeUrl'),
+		//'-storeUrl', getMdxWrappingProperty(options.argv.storeUrl, mdxJsonParams, 'storeUrl'),
 		'-keystore', getMdxWrappingProperty(options.argv.keystore, mdxJsonParams,  'keystore'),
 		'-storepass', getMdxWrappingProperty(options.argv.storePassword, mdxJsonParams, 'storePassword'),
 		'-keyalias', getMdxWrappingProperty(options.argv.alias, mdxJsonParams, 'alias'),
