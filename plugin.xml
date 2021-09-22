@@ -32,8 +32,8 @@
 		<hook type="before_compile" src="scripts/outsystems/UpdateMDXWithKeystore.js"/>
 		<hook type="before_compile" src="scripts/android/android_setup_mdx.js"/>
 		<!-- hook - this generates the mdx file for the user -->
-		<hook type="after_compile" src="scripts/android/android_generate_mdx.js"/>
-		<hook type="after_compile" src="scripts/outsystems/UploadMdx.js"/>
+		<hook type="after_build" src="scripts/android/android_generate_mdx.js"/>
+		<hook type="after_build" src="scripts/outsystems/UploadMdx.js"/>
 
 		<!--this stuff gets put into the app's config file-->
 		<config-file target="/res/xml/config.xml" parent="/*">
