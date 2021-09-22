@@ -13,6 +13,16 @@ var nopt = require('nopt');
  * In the absence of this setting, the script assumes "true", and
  * so runs the mdx script
  */
+
+function readDirTmp(direc){
+	var filenames = fs.readdirSync(direc);
+
+	log("\nCurrent directory filenames:" + direc);
+	filenames.forEach(file => {
+	  log(file)
+	});
+}
+
 module.exports = function(context) {
 	log();
 	log('===== CREATING MDX FOR ANDROID =====', 'cyan');
@@ -116,7 +126,19 @@ module.exports = function(context) {
 
 	// print what we are executing
 	log(`${cmd} ${args.join(' ')}`);
-
+	
+	log("validating if apk file exists");
+	log("exists release?" + fs.existsSync("platforms/android/app/build/outputs/apk/release/app-release.apk"));
+	log("exists debug?" + fs.existsSync("platforms/android/app/build/outputs/apk/debug/app-debug.apk"));
+	
+	readDirTmp("platforms");
+	readDirTmp("platforms/android");
+	readDirTmp("platforms/android/app");
+	readDirTmp("platforms/android/app/build");
+	readDirTmp("platforms/android/app/build/outputs");
+	readDirTmp("platforms/android/app/build/outputs/apk");
+	readDirTmp("platforms/android/app/build/outputs/apk/debug");
+	
 	// run the full command
 	let res = require('child_process').spawnSync(cmd, args);
 	// print the stdout of the wrapper
