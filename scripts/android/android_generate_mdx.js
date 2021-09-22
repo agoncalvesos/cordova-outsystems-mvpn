@@ -80,6 +80,9 @@ module.exports = function(context) {
 		'-keyalias', getMdxWrappingProperty(options.argv.alias, mdxJsonParams, 'alias'),
 		'-keypass', getMdxWrappingProperty(options.argv.password, mdxJsonParams, 'password'),
 	];
+	
+	log("args")
+	log(args);
 
 	// if we receive invalid input in any of the args, flip this flag
 	let is_err = false;
