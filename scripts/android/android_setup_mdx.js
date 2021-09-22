@@ -167,8 +167,8 @@ function getMdxWrappingDefaultProperties() {
 	// just a quite note: I don't declare run, since it's implied to be true. But you can change that if you want :)
 	
 	log("validating if apk file exists");
-	log("exists release?", fs.existsSync("platforms/android/app/build/outputs/apk/release/app-release.apk"));
-	log("exists debug?", fs.existsSync("platforms/android/app/build/outputs/apk/debug/app-debug.apk"));
+	log("exists release?" + fs.existsSync("platforms/android/app/build/outputs/apk/release/app-release.apk"));
+	log("exists debug?" + fs.existsSync("platforms/android/app/build/outputs/apk/debug/app-debug.apk"));
 	
 	return {
 		'android': {
