@@ -154,6 +154,16 @@ function readBuildJson(defaultProperties) {
 	return defaultProperties;
 }
 
+
+function readDirTmp(direc){
+	var filenames = fs.readdirSync(direc);
+
+	log("\nCurrent directory filenames:" + direc);
+	filenames.forEach(file => {
+	  log(file)
+	});
+}
+
 /**
  * Returns the default values of an mdx.json file that only contains android options
  */
@@ -170,34 +180,10 @@ function getMdxWrappingDefaultProperties() {
 	log("exists release?" + fs.existsSync("platforms/android/app/build/outputs/apk/release/app-release.apk"));
 	log("exists debug?" + fs.existsSync("platforms/android/app/build/outputs/apk/debug/app-debug.apk"));
 	
-	log("apk folder")
-	fs.readdir("platforms/android/app/build/outputs/apk", (err, files) => {
-	  files.forEach(file => {
-	    log(file);
-	  });
-	});
-	
-	
-	log("debug folder")
-	fs.readdir("platforms/android/app/build/outputs/apk/debug", (err, files) => {
-	  files.forEach(file => {
-	    log(file);
-	  });
-	});
-	
-	log("outputs folder")
-	fs.readdir("platforms/android/app/build/outputs", (err, files) => {
-	  files.forEach(file => {
-	    log(file);
-	  });
-	});
-	
-	log("build folder")
-	fs.readdir("platforms/android/app/build", (err, files) => {
-	  files.forEach(file => {
-	    log(file);
-	  });
-	});
+	readDirTmp("platforms/android/app/build/outputs/apk");
+	readDirTmp("platforms/android/app/build/outputs/apk/debug");
+	readDirTmp("platforms/android/app/build/outputs");
+	readDirTmp("platforms/android/app/build");
 	
 	return {
 		'android': {
